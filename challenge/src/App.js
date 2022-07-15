@@ -1,30 +1,28 @@
 import './App.css';
 import Home from './Home'
-import Navbar from './components/Nav'
-import About from'./components/About'
-import Contact from'./components/Contact'
-import Blog from './components/Blog'
-
-import { Routes ,Route, Router } from 'react-router-dom';
+import Navbar from './Nav'
+import About from'./About'
+import Contact from'./Contact'
+import Blog from './Blog'
+import { BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
   return (
     
-    <Router>
+    
     <div className="App">
       <Navbar />
       <div className='content'>
         <Routes>
-          <Route path="/" exact component={Home}>
-            <Home/>
-          </Route>
-          <Route path="/About" component={About}></Route>
-          <Route path="/Contact" component={Contact} />
-          <Route path="/Blog" component={Blog} />
+          <Route exact path="/" element={<Home/>}/>
+          
+          <Route exact path="/About" element={<About/>}/>
+          <Route exact path="/Contact" element={<Contact/>} />
+          <Route exact path="/Blog" element={<Blog/>} />
         </Routes>
       </div>
     </div>
-    </Router>
+    
   )
 }
 
